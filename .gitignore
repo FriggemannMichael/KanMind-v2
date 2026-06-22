@@ -1,0 +1,34 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Django/local runtime
+db.sqlite3
+*.sqlite3
+*.sqlite
+*.db
+media/
+staticfiles/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Test and coverage output
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# IDE/editor
+.idea/
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store
