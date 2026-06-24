@@ -1,6 +1,4 @@
 """Database models for boards, tasks, and comments."""
-from tokenize import Comment
-
 from django.conf import settings
 from django.db import models
 
@@ -71,7 +69,7 @@ class Task(models.Model):
         on_delete=models.SET_NULL,
         related_name='created_tasks',
         blank=True,
-        null=True, #SET_NULL braucht zwingend null=True
+        null=True,
     )
 
     class Meta:

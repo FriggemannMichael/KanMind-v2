@@ -21,7 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!_(ugftjz4-@zoj5x&q5q8r*plj@yx5a+3j7&80&rd$-y8p6dr'
+SECRET_KEY = (
+    'django-insecure-!_(ugftjz4-@zoj5x&q5q8r*plj@yx5a+3j7&80&rd$-y8p6dr'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -92,16 +94,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation'
+                '.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation'
+                '.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation'
+                '.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation'
+                '.NumericPasswordValidator',
     },
 ]
 
@@ -140,5 +146,5 @@ REST_FRAMEWORK = {
 
 # Use a fast (insecure) password hasher while running the test suite so that
 # user creation in tests is not slowed down by the production hasher.
-if 'test' in sys.argv:
+if 'test' in sys.argv or 'pytest' in sys.modules:
     PASSWORD_HASHERS = ['django.contrib.auth.hashers.MD5PasswordHasher']
